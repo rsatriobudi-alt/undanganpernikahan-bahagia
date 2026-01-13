@@ -1,0 +1,385 @@
+/* =========================
+   ROOT VARIABLE
+========================= */
+:root {
+  --primary: #f14e95;
+  --secondary: #f5d1d1;
+  --dark: #222;
+  --bg: #f5f5f5;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================
+   RESET & GLOBAL
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.1rem;
+  font-family: "Work Sans", sans-serif;
+  min-height: 2000px;
+  background-color: var(--bg);
+
+  /* Background image romantis / floral */
+  background-image: url("img/proy-weed.jpg"); /* ganti dengan file gambar kamu */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* efek parallax halus */
+
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/* Background Overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("img/pg-shot.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.65);
+  z-index: -2;
+}
+
+/* Gradient Layer */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.6)
+  );
+  z-index: -1;
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+.hero h4 {
+  font-size: 1.8rem;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+  font-family: "Sacramento", cursive;
+  font-size: 4.5rem;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+  text-shadow: var(--shadow);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--secondary);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+/* =========================
+   BUTTON / CTA
+========================= */
+.hero a {
+  display: inline-block;
+  padding: 0.75rem 2.5rem;
+  background-color: var(--secondary);
+  color: var(--primary);
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.hero a:hover {
+  background-color: var(--primary);
+  color: var(--secondary);
+  transform: translateY(-3px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 3.2rem;
+  }
+
+  .hero h4 {
+    font-size: 1.4rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .hero a {
+    padding: 0.65rem 2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================
+   SECTION UMUM
+========================= */
+section {
+  padding: 5rem 0;
+}
+
+h2 {
+  font-family: "Sacramento", cursive;
+  font-size: 3rem;
+  color: var(--primary);
+}
+
+.undangan p,
+.acara p,
+footer p {
+  max-width: 700px;
+  margin: auto;
+}
+
+/* =========================
+   UNDANGAN
+========================= */
+.undangan h3 {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+}
+
+.dan {
+  font-family: "Sacramento", cursive;
+  font-size: 4rem;
+  color: var(--primary);
+}
+
+/* =========================
+   ACARA
+========================= */
+.card-acara {
+  background: white;
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: blue;
+  color: white;
+  padding: 4rem 1rem;
+}
+
+footer h5 {
+  font-family: "Sacramento", cursive;
+  font-size: 2.5rem;
+}
+
+/*=========================
+  COUNTDOWN
+  RESPONSIVE
+  (ANGKA PUTIH BERSIH)
+  =========================*/
+.simply-countdown {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  gap: 2vw !important;
+  margin: 2rem auto !important;
+  width: 100% !important;
+}
+
+.simply-countdown > .simply-section {
+  background: rgba(255, 255, 255, 0.15) !important; /* Efek kaca */
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+
+  width: 18vw !important;
+  height: 18vw !important;
+  max-width: 80px !important;
+  max-height: 80px !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* MEMAKSA ANGKA JADI PUTIH */
+.simply-countdown .simply-amount {
+  display: block !important;
+  font-size: 5.5vw !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  color: #ffffff !important; /* Putih murni */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* MEMAKSA TEKS LABEL JADI PUTIH */
+.simply-countdown .simply-word {
+  display: block !important;
+  font-size: 2.2vw !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  margin-top: 4px !important;
+  color: #ffffff !important; /* Putih murni */
+  opacity: 0.9 !important;
+}
+
+/* Penyesuaian layar besar */
+@media (min-width: 481px) {
+  .simply-countdown > .simply-section {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  .simply-countdown .simply-amount {
+    font-size: 1.8rem !important;
+  }
+  .simply-countdown .simply-word {
+    font-size: 0.8rem !important;
+  }
+}
+/*
+
+/* =========================
+   TABLET
+========================= */
+@media (min-width: 768px) {
+  .simply-countdown > .simply-section {
+    min-width: 70px;
+    padding: 1rem 0.8rem;
+  }
+
+  .simply-countdown .simply-amount {
+    font-size: 1.4rem;
+  }
+
+  .simply-countdown .simply-word {
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================
+   DESKTOP
+========================= */
+@media (min-width: 1024px) {
+  .simply-countdown > .simply-section {
+    min-width: 80px;
+    padding: 1.2rem 1rem;
+  }
+
+  .simply-countdown .simply-amount {
+    font-size: 1.6rem;
+  }
+
+  .simply-countdown .simply-word {
+    font-size: 1rem;
+  }
+}
+
+/* =========================
+   AYAT & DOA BOX
+========================= */
+.ayat-doa {
+  background: linear-gradient(to bottom, #fff, #fdf0f6);
+  padding: 6rem 1.5rem;
+}
+
+.box-ayat {
+  background: white;
+  border-radius: 25px;
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+
+.box-ayat::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 25px;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--bg), #f0c9c9);
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.icon {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.ayat-arab {
+  font-family: "Amiri", serif;
+  font-size: 2rem;
+  line-height: 3rem;
+  direction: rtl;
+  color: #333;
+}
+
+.ayat-arti {
+  font-size: 1.05rem;
+  margin-top: 1.5rem;
+  color: #555;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .box-ayat {
+    padding: 2rem 1.5rem;
+  }
+
+  .ayat-arab {
+    font-size: 1.4rem;
+    line-height: 2.3rem;
+  }
+
+  .ayat-arti {
+    font-size: 0.95rem;
+  }
+}
